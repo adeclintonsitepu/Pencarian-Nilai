@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> AMIK Universal</title>
+	<link rel="icon" href="../static/img/Tab.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body >
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div id="invoice">
+                    <div class="invoice overflow-auto">
+                        <div style="min-width: 600px">
+                            <header>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="javascript:;">
+                                                        <img src="assets/images/logo-icon.png" width="80" alt="">
+                                                    </a>
+                                    </div>
+                                    <div class="col company-details">
+                                        <h2 class="name">
+                                            <a target="_blank" href="https://universal.ac.id">
+                                        Akademi Manajemen Informatika dan Komputer Universal
+                                        </a>
+                                        </h2>
+                                        <div>Jalan Setia Budi No. 20 Medan Selayang</div>
+                                        <div>Kota Medan</div>
+                                        <div>Indonesia</div>
+                                    </div>
+                                </div>
+                            </header>
+                            <main>
+                                <div class="row contacts">
+                                    <div class="col invoice-to">
+                                        <div class="text-gray-light">Informasi Mahasiswa:</div>
+                                        <h2 class="to">{{Nama}}</h2>
+                                        <div class="address">{{NIM}}</div>
+                                        <div class="email">{{Prodi}}
+                                        </div>
+                                    </div>
+                                    <div class="col invoice-details">
+                                        <h1 class="invoice-id">Matematika Dasar</h1>
+                                        <div class="date">Kode Matakuliah</div>
+                                        <div class="date">Nama Dosen</div>
+                                    </div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Deskripsi</th>
+                                            <th class="text-right"></th>
+                                            <th class="text-right"></th>
+                                            <th class="text-center">Nilai</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in range (Range) %}
+                                        <tr>
+                                            <td class="unit text-center">{{i}}</td>
+                                            <td class="text-left">
+                                                <p>{{Header[i]}}</p></td>
+                                            <td class="qty"></td>
+                                            <td class="qty"></td>
+                                            <td class="total text-center">{{Nilai[i]}}</td>
+                                        </tr>
+                                        {% endfor %}        
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td colspan="2">Nilai Akhir</td>
+                                            <td>{{nilaiAkhir}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td colspan="2">Grade</td>
+                                            <td>{{grade}}</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                
+                                <div class="notices">
+                                    <div>NOTICE:</div>
+                                    <div class="notice">Jika ada kesalahan dalam pemberian nilia silahkan hubungi dosen terkait</div>
+                                </div>
+                            </main>
+                            <div style="text-align: right; ">
+                                <a class="btn btn-outline-primary" style="margin-bottom: 20px; padding-left: 40px; padding-right: 40px;" href="{{ url_for('home') }}"> Kembali</a>
+                            </div>
+                            
+                            <footer></footer>
+                        </div>
+                        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
