@@ -4,12 +4,7 @@ import gspread
 
 connect = gspread.service_account(filename=('service_account.json'))
 
-# Connection to filename spreadsheet
-sheetname = connect.open('test')
 
-# Connection to Sheet spreadsheet
-worksheetname = sheetname.worksheet('Sheet2')
-worksheetnilai = sheetname.worksheet('Sheet1')
 
 #Initialize the flask App
 app = Flask(__name__)
@@ -27,9 +22,18 @@ def cari():
     '''
     int_features = []
     int_features = [x for x in request.form.values()]
+
+    input_MK = request.form.get('List')
+    input_Username = int_features[1]
+    input_Password = int_features[2]
+    print(f'{input_MK}, {input_Password}, {input_Username}')
     
-    input_Username = int_features[0]
-    input_Password = int_features[1]
+    # Connection to filename spreadsheet
+    sheetname = connect.open(input_MK)
+    
+    # Connection to Sheet spreadsheet
+    worksheetname = sheetname.worksheet('Sheet2')
+    worksheetnilai = sheetname.worksheet('Sheet1')
 
     find_Username = worksheetname.find(query=input_Username,in_column=1)
     
