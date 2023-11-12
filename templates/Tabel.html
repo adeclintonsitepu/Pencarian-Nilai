@@ -48,9 +48,8 @@
                                         </div>
                                     </div>
                                     <div class="col invoice-details">
-                                        <h1 class="invoice-id">Matematika Dasar</h1>
-                                        <div class="date">Kode Matakuliah</div>
-                                        <div class="date">Nama Dosen</div>
+                                        <h1 class="invoice-id">{{matakuliah}}</h1>
+                                        <div class="date">Dosen: Ade Clinton Sitepu, S.Si., M.Kom.</div>
                                     </div>
                                 </div>
                                 <table>
@@ -73,7 +72,7 @@
                                             <td class="qty"></td>
                                             <td class="total text-center">{{Nilai[i]}}</td>
                                         </tr>
-                                        {% endfor %}        
+                                        {% endfor %}
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -88,16 +87,16 @@
                                         </tr>
                                     </tfoot>
                                 </table>
-                                
+
                                 <div class="notices">
                                     <div>NOTICE:</div>
-                                    <div class="notice">Jika ada kesalahan dalam pemberian nilia silahkan hubungi dosen terkait</div>
+                                    <div class="notice">Jika ada kesalahan dalam pemberian nilai silahkan hubungi dosen yang bersangkutan</div>
                                 </div>
                             </main>
                             <div style="text-align: right; ">
                                 <a class="btn btn-outline-primary" style="margin-bottom: 20px; padding-left: 40px; padding-right: 40px;" href="{{ url_for('home') }}"> Kembali</a>
                             </div>
-                            
+
                             <footer></footer>
                         </div>
                         <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
@@ -107,6 +106,6 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>
