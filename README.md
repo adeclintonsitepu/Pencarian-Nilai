@@ -14,7 +14,7 @@ git clone https://github.com/adeclintonsitepu/Pencarian-Nilai.git
 
 Move into the directory where we have the project files : 
 ```bash
-cd PencarianNilai
+cd Pencarian-Nilai
 
 ```
 
