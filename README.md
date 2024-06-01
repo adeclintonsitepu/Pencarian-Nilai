@@ -49,7 +49,7 @@ pip install flask
   <li>
     
 ```bash
-pip install spread
+pip install gspread
 
 ```
     
