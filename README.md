@@ -35,7 +35,7 @@ envname\scripts\activate
 ```
 
 <div>
-Requirements: <br />
+<h3>Requirements:</h3>
 <ul>
   <li><bold></b>Python 3.10.*</bold></b> (Type "python --ver" from yor CMD to see your version)</li>
   <li>
